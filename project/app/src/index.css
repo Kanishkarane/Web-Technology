@@ -1,0 +1,54 @@
+:root {
+  --wine: #360317;
+  --wine-deep: #14010a;
+  --panel: rgba(255, 235, 242, 0.06);
+  --line: rgba(255, 220, 230, 0.16);
+  --text: #f7ebef;
+  --muted: #c7a3b1;
+  --gold: #e8b86d;
+  --gold-dark: #2a0413;
+  --danger: #ff7a8a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif; line-height: 1.6;
+  background: linear-gradient(160deg, var(--wine) 0%, #1f020f 55%, var(--wine-deep) 100%) fixed;
+}
+h2, h3, .brand { font-family: "Fraunces", Georgia, serif; }
+h2 { font-size: 2rem; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em; }
+a { color: var(--gold); }
+
+nav { display: flex; gap: 24px; align-items: baseline; padding: 22px 32px; border-bottom: 1px solid var(--line); }
+nav .brand { font-size: 1.5rem; font-weight: 800; margin-right: auto; color: var(--text); }
+nav a { color: var(--muted); text-decoration: none; padding-bottom: 2px; }
+nav a:hover { color: var(--text); }
+nav a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+
+main { max-width: 760px; margin: 36px auto; padding: 0 20px; }
+
+/* posts: open list with a gold rule instead of boxed cards */
+.card { background: var(--panel); border-left: 3px solid var(--gold); border-radius: 0 14px 14px 0; padding: 18px 22px; margin-bottom: 18px; }
+.card h3 { margin: 0 0 4px; font-size: 1.3rem; }
+.card h3 a { color: var(--text); text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 10px; }
+
+form { display: flex; flex-direction: column; gap: 14px; }
+input, textarea {
+  padding: 12px 14px; font: inherit; color: var(--text);
+  background: rgba(0, 0, 0, 0.28); border: 1px solid var(--line); border-radius: 10px;
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+button { padding: 10px 20px; border: 0; border-radius: 999px; background: var(--gold); color: var(--gold-dark); font: inherit; font-weight: 500; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+button.danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+.actions { display: flex; gap: 10px; margin-top: 8px; }
+.error { color: var(--danger); }
+
+table { width: 100%; border-collapse: collapse; }
+th { color: var(--muted); font-weight: 500; font-size: 0.9rem; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); }
